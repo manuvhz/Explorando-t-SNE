@@ -100,14 +100,14 @@ const HowItWorksSection: React.FC = () => {
 
     return (
         <AnimatedSection id="how-it-works">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-light-slate">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate">
               ¿Cómo Funciona?
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate">
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-600 dark:text-slate">
                 Sigue los pasos para ver cómo t-SNE transforma el caos en claridad. El slider de perplejidad ajusta el destino de los clústeres en tiempo real.
             </p>
             <div className="flex flex-col lg:flex-row gap-8 items-center">
-                <div className="w-full lg:w-2/3 bg-light-navy/50 p-4 rounded-lg shadow-inner">
+                <div className="w-full lg:w-2/3 bg-slate-100 dark:bg-light-navy/50 p-4 rounded-lg shadow-inner">
                     <svg viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`} className="w-full h-auto rounded">
                         {clusterCenters.map((center, i) => (
                             <circle 
@@ -136,25 +136,25 @@ const HowItWorksSection: React.FC = () => {
                 </div>
                 <div className="w-full lg:w-1/3 space-y-6">
                     <div>
-                        <h3 className="text-xl font-bold text-light-slate mb-2">Ajustar Perplejidad</h3>
-                        <p className="text-sm mb-4 text-slate">Un valor bajo crea clústeres dispersos. Uno alto los hace compactos. ¡Observa cómo cambian las guías de destino!</p>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-light-slate mb-2">Ajustar Perplejidad</h3>
+                        <p className="text-sm mb-4 text-slate-600 dark:text-slate">Un valor bajo crea clústeres dispersos. Uno alto los hace compactos. ¡Observa cómo cambian las guías de destino!</p>
                         <input
                             type="range"
                             min="5"
                             max="100"
                             value={perplexity}
                             onChange={(e) => setPerplexity(Number(e.target.value))}
-                            className="w-full h-2 bg-dark-slate rounded-lg appearance-none cursor-pointer accent-neon-turquoise"
+                            className="w-full h-2 bg-slate-300 dark:bg-dark-slate rounded-lg appearance-none cursor-pointer accent-neon-turquoise"
                         />
                         <div className="text-center font-mono mt-2 text-neon-turquoise text-lg">{perplexity}</div>
                     </div>
                     <div className="space-y-4">
-                        <div className="p-4 border border-dark-slate rounded-lg min-h-[140px] flex flex-col justify-center bg-deep-blue">
+                        <div className="p-4 border border-slate-200 dark:border-dark-slate rounded-lg min-h-[140px] flex flex-col justify-center bg-white dark:bg-deep-blue">
                             <h4 className="font-bold text-neon-turquoise mb-2">Paso {step}:</h4>
-                            <p className="text-sm">{STEPS_TEXT[step]}</p>
+                            <p className="text-sm text-slate-600 dark:text-slate">{STEPS_TEXT[step]}</p>
                         </div>
                         <div className="flex gap-4">
-                            <button onClick={handleReset} className="w-full px-4 py-2 bg-slate/50 text-light-slate font-semibold rounded-lg hover:bg-slate/60 transition-colors">
+                            <button onClick={handleReset} className="w-full px-4 py-2 bg-slate-200 dark:bg-slate/50 text-slate-800 dark:text-light-slate font-semibold rounded-lg hover:bg-slate-300 dark:hover:bg-slate/60 transition-colors">
                                 Reiniciar
                             </button>
                             <button disabled={step >= STEPS_TEXT.length - 1} onClick={handleNext} className="w-full px-4 py-2 bg-neon-turquoise text-deep-blue font-bold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed">

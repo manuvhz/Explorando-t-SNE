@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { NAV_LINKS } from '../constants';
+import ThemeToggle from './ThemeToggle';
 
 const useScrollSpy = (ids: string[], options: IntersectionObserverInit) => {
     const [activeId, setActiveId] = useState<string | null>(null);
@@ -45,7 +46,12 @@ const Logo: React.FC = () => (
     </a>
 );
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    theme: 'dark' | 'light';
+    toggleTheme: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [isNearTop, setIsNearTop] = useState(true);
@@ -79,23 +85,29 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-deep-blue/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
+        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-deep-blue/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
             <nav className="container mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
                 <Logo />
-                <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    {NAV_LINKS.map((link, index) => (
-                        <a 
-                          key={link.name} 
-                          href={link.href} 
-                          onClick={(e) => handleLinkClick(e, link.href)} 
-                          className={`text-sm font-medium transition-colors duration-300 ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-light-slate hover:text-neon-turquoise'}`}
-                        >
-                           <span className="text-neon-turquoise">0{index + 1}.</span> {link.name}
-                        </a>
-                    ))}
+                <div className="hidden md:flex items-center">
+                    <div className="flex items-center space-x-6 lg:space-x-8">
+                        {NAV_LINKS.map((link, index) => (
+                            <a 
+                              key={link.name} 
+                              href={link.href} 
+                              onClick={(e) => handleLinkClick(e, link.href)} 
+                              className={`text-sm font-medium transition-colors duration-300 ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-slate-900 dark:text-light-slate hover:text-neon-turquoise'}`}
+                            >
+                               <span className="text-neon-turquoise">0{index + 1}.</span> {link.name}
+                            </a>
+                        ))}
+                    </div>
+                    <div className="ml-6">
+                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                    </div>
                 </div>
-                <div className="md:hidden flex items-center">
-                    <button onClick={() => setMenuOpen(!menuOpen)} className="ml-4 z-50 text-light-slate" aria-label="Abrir menú">
+                <div className="md:hidden flex items-center gap-4">
+                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                    <button onClick={() => setMenuOpen(!menuOpen)} className="z-50 text-slate-900 dark:text-light-slate" aria-label="Abrir menú">
                         {menuOpen ? 
                           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> :
                           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
@@ -103,6 +115,7 @@ const Header: React.FC = () => {
                     </button>
                 </div>
             </nav>
+            {/* Mobile Menu */}
             <div className={`md:hidden fixed top-0 right-0 w-3/4 max-w-sm h-full bg-light-navy shadow-xl transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
                 <div className="flex flex-col items-center justify-center h-full space-y-8">
                     {NAV_LINKS.map((link, index) => (
