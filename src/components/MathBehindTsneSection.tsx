@@ -13,7 +13,7 @@ const MathCard: React.FC<{ title: string; subtitle: string; children: React.Reac
         </div>
         <h3 className="text-xl font-bold text-slate-900 dark:text-light-slate">{title}</h3>
         <p className="text-neon-turquoise font-semibold mb-3">{subtitle}</p>
-        <p className="text-sm text-slate-600 dark:text-slate flex-grow">{children}</p>
+        <p className="text-sm text-slate-700 dark:text-slate flex-grow">{children}</p>
     </div>
 );
 
@@ -23,7 +23,7 @@ const MathBehindTsneSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate animate-fade-in-up">
                 Las Matemáticas Detrás de t-SNE
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-600 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                 No necesitas ser un experto para entender las ideas clave. Aquí están los conceptos matemáticos que hacen que t-SNE funcione, explicados visualmente.
             </p>
             <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">

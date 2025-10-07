@@ -16,7 +16,7 @@ const LearnMoreSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate">
                 Aprende Más
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-600 dark:text-slate">
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate">
                 El viaje del conocimiento no termina aquí. Sumérgete más profundo en el mundo de t-SNE y el machine learning con estos recursos.
             </p>
             <div className="max-w-lg mx-auto space-y-4 animate-fade-in-up" style={{ animationDelay: '200ms' }}>

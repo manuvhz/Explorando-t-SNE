@@ -81,7 +81,6 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     },
     {
         term: "Reducción de Dimensionalidad",
-        // FIX: Corrected typo "algoritalos" to "algoritmos".
         definition: "El proceso de reducir el número de variables (dimensiones) en un conjunto de datos, conservando la mayor cantidad de información relevante posible. Es útil para la visualización y para mejorar el rendimiento de otros algoritmos."
     },
     {

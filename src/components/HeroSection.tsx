@@ -118,7 +118,7 @@ const HeroSection: React.FC = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-light-slate">
           Explorando <span className="text-neon-turquoise">t-SNE</span>
         </h1>
-        <p className="mt-4 text-lg md:text-xl max-w-xl text-slate-600 dark:text-slate">
+        <p className="mt-4 text-lg md:text-xl max-w-xl text-slate-700 dark:text-slate">
           Una inmersión visual en el poderoso algoritmo para la reducción de dimensionalidad y visualización de datos.
         </p>
         <button onClick={handleScrollClick} className="mt-8 px-8 py-4 bg-transparent border-2 border-neon-turquoise text-neon-turquoise font-bold rounded-lg hover:bg-neon-turquoise/10 transition-all duration-300 animate-pulse-glow">

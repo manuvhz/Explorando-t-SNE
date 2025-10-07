@@ -8,7 +8,7 @@ const GlossaryCard: React.FC<{ term: string, definition: string, delay: number }
         style={{ animationDelay: `${delay}ms` }}
     >
       <h3 className="text-xl font-bold text-neon-turquoise mb-2">{term}</h3>
-      <p className="text-slate-600 dark:text-slate">{definition}</p>
+      <p className="text-slate-700 dark:text-slate">{definition}</p>
     </div>
 );
 
@@ -18,7 +18,7 @@ const GlossarySection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate animate-fade-in-up">
                 Glosario Interactivo
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-600 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                 Refuerza tu comprensión con las definiciones de los conceptos clave detrás de t-SNE.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

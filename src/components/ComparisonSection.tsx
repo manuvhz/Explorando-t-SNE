@@ -10,7 +10,7 @@ const ComparisonCard: React.FC<{ data: ComparisonData, delay: number }> = ({ dat
         style={{ animationDelay: `${delay}ms` }}
     >
         <h3 className="text-xl font-bold text-slate-900 dark:text-light-slate mb-2">{data.title}</h3>
-        <p className="text-sm text-slate-600 dark:text-slate mb-4 flex-grow">{data.description}</p>
+        <p className="text-sm text-slate-700 dark:text-slate mb-4 flex-grow">{data.description}</p>
         
         <div className="bg-white dark:bg-deep-blue/50 rounded-md p-2 mb-4">
             <svg viewBox="0 0 200 200" className="w-full h-auto">
@@ -24,13 +24,13 @@ const ComparisonCard: React.FC<{ data: ComparisonData, delay: number }> = ({ dat
             <h4 className="font-semibold mb-2 text-slate-900 dark:text-light-slate">Ventajas</h4>
             <ul className="space-y-1 mb-4">
                 {data.pros.map(pro => (
-                    <li key={pro} className="flex items-start text-sm text-slate-600 dark:text-slate"><CheckCircleIcon /> {pro}</li>
+                    <li key={pro} className="flex items-start text-sm text-slate-700 dark:text-slate"><CheckCircleIcon /> {pro}</li>
                 ))}
             </ul>
             <h4 className="font-semibold mb-2 text-slate-900 dark:text-light-slate">Desventajas</h4>
             <ul className="space-y-1">
                 {data.cons.map(con => (
-                    <li key={con} className="flex items-start text-sm text-slate-600 dark:text-slate"><XCircleIcon /> {con}</li>
+                    <li key={con} className="flex items-start text-sm text-slate-700 dark:text-slate"><XCircleIcon /> {con}</li>
                 ))}
             </ul>
         </div>
@@ -44,7 +44,7 @@ const ComparisonSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate animate-fade-in-up">
                 t-SNE vs. Otros Algoritmos
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-600 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                 Cada herramienta tiene su propósito. Vea cómo t-SNE se compara con otros métodos populares de reducción de dimensionalidad.
             </p>
             <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">

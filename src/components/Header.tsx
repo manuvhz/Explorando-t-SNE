@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                               key={link.name} 
                               href={link.href} 
                               onClick={(e) => handleLinkClick(e, link.href)} 
-                              className={`text-sm font-medium transition-colors duration-300 ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-slate-900 dark:text-light-slate hover:text-neon-turquoise'}`}
+                              className={`text-sm font-medium transition-colors duration-300 ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-slate-700 dark:text-light-slate hover:text-neon-turquoise'}`}
                             >
                                <span className="text-neon-turquoise">0{index + 1}.</span> {link.name}
                             </a>
@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                 </div>
                 <div className="md:hidden flex items-center gap-4">
                     <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-                    <button onClick={() => setMenuOpen(!menuOpen)} className="z-50 text-slate-900 dark:text-light-slate" aria-label="Abrir menú">
+                    <button onClick={() => setMenuOpen(!menuOpen)} className="z-50 text-slate-800 dark:text-light-slate" aria-label="Abrir menú">
                         {menuOpen ? 
                           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> :
                           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
@@ -116,14 +116,14 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                 </div>
             </nav>
             {/* Mobile Menu */}
-            <div className={`md:hidden fixed top-0 right-0 w-3/4 max-w-sm h-full bg-light-navy shadow-xl transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+            <div className={`md:hidden fixed top-0 right-0 w-3/4 max-w-sm h-full bg-white dark:bg-light-navy shadow-xl transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
                 <div className="flex flex-col items-center justify-center h-full space-y-8">
                     {NAV_LINKS.map((link, index) => (
                         <a 
                           key={link.name} 
                           href={link.href} 
                           onClick={(e) => handleLinkClick(e, link.href)} 
-                          className={`text-2xl transition-colors ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-light-slate hover:text-neon-turquoise'}`}
+                          className={`text-2xl transition-colors ${activeId === link.href.substring(1) ? 'text-neon-turquoise' : 'text-slate-800 dark:text-light-slate hover:text-neon-turquoise'}`}
                         >
                             <span className="text-neon-turquoise">0{index + 1}.</span> {link.name}
                         </a>

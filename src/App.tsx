@@ -15,9 +15,11 @@ import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (localStorage.getItem('theme') === 'dark' || 
-       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      return 'dark';
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('theme') === 'dark' || 
+         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        return 'dark';
+      }
     }
     return 'light';
   });
@@ -40,7 +42,7 @@ function App() {
   return (
     <>
       <CustomCursor />
-      <div className="font-sans text-slate-900 dark:text-light-slate min-h-screen selection:bg-neon-turquoise/30">
+      <div className="min-h-screen selection:bg-neon-turquoise/30">
         <Header theme={theme} toggleTheme={toggleTheme} />
         <main className="px-6 md:px-20 lg:px-40 xl:px-60 mx-auto max-w-[1600px]">
           <HeroSection />
