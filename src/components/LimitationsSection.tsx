@@ -12,13 +12,13 @@ const LimitationCard: React.FC<{ item: LimitationData, delay: number }> = ({ ite
 
     return (
         <div 
-            className="bg-slate-50 dark:bg-light-navy p-6 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-neon-turquoise/10 transition-all duration-300 flex items-start gap-4 animate-fade-in-stagger"
+            className="bg-light-navy p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-neon-turquoise/10 transition-all duration-300 flex items-start gap-4 animate-fade-in-stagger"
             style={{ animationDelay: `${delay}ms` }}
         >
             <Icon className={`h-8 w-8 shrink-0 mt-1 ${iconColor}`} />
             <div>
                 <h3 className={`text-xl font-bold ${titleColor} mb-2`}>{item.title}</h3>
-                <p className="text-slate-700 dark:text-slate">{item.description}</p>
+                <p className="text-slate">{item.description}</p>
             </div>
         </div>
     );
@@ -27,10 +27,10 @@ const LimitationCard: React.FC<{ item: LimitationData, delay: number }> = ({ ite
 const LimitationsSection: React.FC = () => {
     return (
         <AnimatedSection id="limitations">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-light-slate animate-fade-in-up">
                 Limitaciones y Consejos
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate animate-fade-in-up" style={{ animationDelay: '100ms' }}>
                 t-SNE es una herramienta poderosa, pero es crucial entender cómo interpretar sus resultados correctamente para no llegar a conclusiones erróneas.
             </p>
             <div className="grid md:grid-cols-2 gap-6">

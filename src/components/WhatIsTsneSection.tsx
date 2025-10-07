@@ -3,22 +3,22 @@ import AnimatedSection from './AnimatedSection';
 
 const InfoCard: React.FC<{ title: string; subtitle: string; children: React.ReactNode; delay: number }> = ({ title, subtitle, children, delay }) => (
     <div 
-        className="group relative p-8 bg-slate-50 dark:bg-light-navy rounded-lg shadow-lg hover:shadow-2xl dark:hover:shadow-neon-turquoise/20 transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-stagger"
+        className="group relative p-8 bg-light-navy rounded-lg shadow-lg hover:shadow-2xl hover:shadow-neon-turquoise/20 transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-stagger"
         style={{ animationDelay: `${delay}ms` }}
     >
-      <h3 className="text-2xl font-bold text-slate-900 dark:text-light-slate">{title}</h3>
+      <h3 className="text-2xl font-bold text-light-slate">{title}</h3>
       <p className="text-neon-turquoise font-semibold mb-4">{subtitle}</p>
-      <p className="text-slate-700 dark:text-slate">{children}</p>
+      <p className="text-slate">{children}</p>
     </div>
 );
 
 const WhatIsTsneSection: React.FC = () => {
   return (
     <AnimatedSection id="what-is">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-light-slate animate-fade-in-up">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-light-slate animate-fade-in-up">
           ¿Qué es t-SNE?
         </h2>
-        <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate-700 dark:text-slate animate-fade-in-up" style={{animationDelay: '100ms'}}>
+        <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-slate animate-fade-in-up" style={{animationDelay: '100ms'}}>
             t-SNE significa <span className="font-bold text-neon-turquoise">t-Distributed Stochastic Neighbor Embedding</span>. Descompongamos este nombre para entender su magia.
         </p>
         <div className="grid md:grid-cols-3 gap-8">
